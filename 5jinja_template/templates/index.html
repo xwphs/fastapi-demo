@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>主页</title>
+    </head>
+    <body>
+        <p>name: {{name}}</p>
+        <p>age: {{age}}</p>
+        <p>抽象大师</p>
+        <ul>
+            {%for star in stars%}
+            <li>{{star}}</li>
+            {%endfor%}
+        </ul>
+        <p>影视区</p>
+        {%if age > 18%}
+        <ul>
+            {%for av in movies.av%}
+            <li>{{av}}</li>
+            {%endfor%}
+        </ul>
+        {%else%}
+        <ul>
+            {%for cartoon in movies.cartoon%}
+            <li>{{cartoon}}</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+    </body>
+</html>
