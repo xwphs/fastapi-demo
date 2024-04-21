@@ -1,2 +1,4 @@
 # Ignore all __pychche__ directories
 __pycache__/
+.env
+fastapi-project/
