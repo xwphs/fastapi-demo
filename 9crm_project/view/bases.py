@@ -6,6 +6,14 @@ from fastapi.templating import Jinja2Templates
 from models.base import User
 view_router = APIRouter()
 
+# session 和 cookie
+@view_router.get('/home')
+async def home(req: Request):
+    cookie = req.cookies.get('session_id')
+    session = req.session.get('session')
+    templates: Jinja2Templates = req.app.state.views
+    return templates.TemplateResponse(req, 'index.html', {'cookie': cookie, 'session': session})
+
 @view_router.get('/reg')
 async def reg_page(req: Request):
     templates: Jinja2Templates = req.app.state.views

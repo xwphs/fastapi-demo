@@ -33,8 +33,9 @@ app.include_router(all_router)
 # 中间件
 app.add_middleware(MyMiddleWare)
 app.add_middleware(SessionMiddleware,
-                   secret_key='session',
-                   session_cookie='f_id')
+                   secret_key=setting.SECRET_KEY,
+                   session_cookie=setting.SESSION_COOKIE,
+                   max_age=setting.MAX_AGE)
 app.add_middleware(CORSMiddleware,
                    allow_origins=setting.COR_ORIGINS,
                    allow_methods=setting.COR_METHODS,

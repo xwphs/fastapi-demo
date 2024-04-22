@@ -30,4 +30,9 @@ class Config:
     COR_HEADERS: List[str] = ['*']
     COR_CREDENTIALS: bool = True
 
+    # Session
+    SECRET_KEY='session'
+    SESSION_COOKIE = 'session_id'
+    MAX_AGE = 7 * 24 * 60 * 60
+
 setting = Config()
