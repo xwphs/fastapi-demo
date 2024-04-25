@@ -35,4 +35,9 @@ class Config:
     SESSION_COOKIE = 'session_id'
     MAX_AGE = 7 * 24 * 60 * 60
 
+    # JWT
+    JWT_TOKEN_EXPIRE_MINUTES = 24 * 60
+    JWT_SECRET_KEY = 'xwphs1234afaafagasfare93qags3'
+    JWT_ALGORITHM = 'HS256'
+
 setting = Config()

@@ -11,7 +11,7 @@ def startup(app: FastAPI)-> Callable:
         # 注册mysql
         await registe_mysql(app)
         # 注入缓存到app state
-        app.state.cache = await sys_cache()
+        # app.state.cache = await sys_cache()
     return app_start
 
 def shutdown(app: FastAPI) ->Callable:
